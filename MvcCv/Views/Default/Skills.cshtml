@@ -18,14 +18,16 @@
         <li class="list-inline-item"><i class="fab fa-npm"></i></li>
     </ul>
     <div class="subheading mb-3">Workflow</div>
-    @foreach (var x in Model)
-    {
+    
     <ul class="fa-ul mb-0">
-        <li>
-            <span class="fa-li"><i class="fas fa-check"></i></span>
-            @x.Skill
-        </li>
+        @foreach (var x in Model)
+        {
+            <li>
+                <span class="fa-li"><i class="fas fa-check"></i></span>
+                @x.Skill
+            </li>
+        }
 
-    </ul>
-    }
+        </ul>
+   
 </div>

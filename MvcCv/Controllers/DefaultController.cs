@@ -19,7 +19,7 @@ namespace MvcCv.Controllers
         }
         public PartialViewResult Experience()
         {
-            var experiences= db.TblExperiences.ToList();
+            var experiences = db.TblExperiences.ToList();
             return PartialView(experiences);
         }
         public PartialViewResult Education()
@@ -31,6 +31,20 @@ namespace MvcCv.Controllers
         {
             var skills = db.TblSkills.ToList();
             return PartialView(skills);
+        }
+        public PartialViewResult Hobbies()
+        {
+            var hobbies = db.TblHobbies.ToList();
+            return PartialView(hobbies);
+        }
+        public PartialViewResult Certificates()
+        {
+            var certificates = db.TblSertificates.ToList();
+            return PartialView(certificates);
+        }
+        public PartialViewResult Contact()
+        {
+            return PartialView();
         }
     }
 }
