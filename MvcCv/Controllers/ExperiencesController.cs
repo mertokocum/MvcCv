@@ -40,6 +40,17 @@ namespace MvcCv.Controllers
             TblExperiences t = repo.find(x => x.ID == id);
             return View(t);
         }
-        
+        [HttpPost]
+        public ActionResult GetExperience(TblExperiences p)
+        {
+            TblExperiences t = repo.find(x => x.ID == p.ID);
+            t.Title = p.Title;
+            t.Sub_Title = p.Sub_Title;
+            t.Date = p.Date;
+            t.Details = p.Details;
+            repo.TUpdate(t);
+            return RedirectToAction("Index");
+        }
+
     }
 }
