@@ -2357,6 +2357,7 @@
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Aboutme\Index.cshtml" />
     <Content Include="Views\Experiences\Index.cshtml" />
+    <Content Include="Views\Experiences\AddExperience.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
