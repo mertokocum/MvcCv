@@ -1,4 +1,4 @@
-﻿
+﻿@model MvcCv.Models.Entity.TblExperiences
 @{
     ViewBag.Title = "GetExperience";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -7,15 +7,20 @@
 <br />
 <h4>Edit Experience</h4>
 <form>
-    <input type="text" name="ID" class="form-control" placeholder="ID" />
+    @Html.Label("Experience ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
     <br />
-    <input type="text" name="Title" class="form-control" placeholder="Company" />
+    @Html.Label("Company")
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
     <br />
-    <input type="text" name="Sub_Title" class="form-control" placeholder="Job Title" />
+    @Html.Label("Job Title")
+    @Html.TextBoxFor(x => x.Sub_Title, new { @class = "form-control" })
     <br />
-    <input type="text" name="Date" class="form-control" placeholder="Date" />
+    @Html.Label("Date")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
     <br />
-    <textarea placeholder="Details" name="Details" class="form-control" oninput="autoExpand(this)"></textarea>
+    @Html.Label("Details")
+    @Html.TextAreaFor(x => x.Details, new { @class = "form-control", oninput = "autoExpand(this)" })
     <br />
     <button class="btn btn-info">Submit</button>
 </form>
