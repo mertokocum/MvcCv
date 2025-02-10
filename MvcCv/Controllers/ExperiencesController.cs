@@ -28,5 +28,11 @@ namespace MvcCv.Controllers
             repo.TAdd(p);
             return RedirectToAction("Index");
         }
+        public ActionResult DeleteExperience(int id)
+        {
+            TblExperiences t = repo.find(x=>x.ID==id);
+            repo.TDelete(t);
+            return RedirectToAction("Index");
+        }
     }
 }
