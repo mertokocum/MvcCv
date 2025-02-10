@@ -6,12 +6,12 @@ using MvcCv.Models.Entity;
 
 namespace MvcCv.Repositories
 {
-    public class ExperiencesRepository
+    public class ExperiencesRepository : GenericRepository<TblExperiences>
     {
-        ////DbCvEntities db = new DbCvEntities();
-        ////public List<TblExperiences> List()
-        ////{
-        ////    return db.TblExperiences.ToList();
-        ////}
+        DbCvEntities db = new DbCvEntities();
+        public List<TblExperiences> List()
+        {
+            return db.TblExperiences.ToList();
+        }
     }
 }
