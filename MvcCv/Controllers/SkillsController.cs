@@ -17,5 +17,16 @@ namespace MvcCv.Controllers
             var skills=repo.List();
             return View(skills);
         }
+        [HttpGet]
+        public ActionResult AddSkill()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddSkill(TblSkills p)
+        {
+            repo.TAdd(p);
+            return RedirectToAction("Index");
+        }
     }
 }

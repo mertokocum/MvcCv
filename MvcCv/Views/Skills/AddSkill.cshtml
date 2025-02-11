@@ -1,0 +1,25 @@
+﻿@model MvcCv.Models.Entity.TblSkills
+@{
+    ViewBag.Title = "AddSkill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Add New Skill</h4>
+<br />
+<form method="post">
+    @Html.Label("Skill")
+    @Html.TextBoxFor(x => x.Skill, new { @class = "form-control" })
+    <br />
+    @Html.Label("Progress %")
+    @Html.TextBoxFor(x => x.Progress, new { @class = "form-control" })
+    <button class="btn btn-info">Submit</button>
+</form>
+
+
+<script>
+    function autoExpand(element) { //textarea'yı içeriğe göre genişleten fonksiyon
+        element.style.height = "auto";
+        element.style.height = element.scrollHeight + "px";
+    }</script>
+
