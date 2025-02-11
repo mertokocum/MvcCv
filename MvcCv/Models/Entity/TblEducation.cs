@@ -18,8 +18,10 @@ namespace MvcCv.Models.Entity
         public int ID { get; set; }
         [Required(ErrorMessage ="Please enter data!")]
         public string Title { get; set; }
+        
         public string Sub_Title { get; set; }
         public string Sub_Title2 { get; set; }
+        [StringLength(10,ErrorMessage ="Max 10 character!")]
         public string GNO { get; set; }
         public string Date { get; set; }
     }

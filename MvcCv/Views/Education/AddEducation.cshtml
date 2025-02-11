@@ -9,8 +9,8 @@
 <br />
 <form method="post">
     @*@Html.Label("University Name:")
-    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.Title, "", new { @class = "text-danger" })*@
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Title, "", new { @class = "text-danger" })*@
 
     @Html.Label("University Name:")
     @Html.TextBoxFor(x => x.Title, new
@@ -28,7 +28,13 @@
     @Html.TextBoxFor(x => x.Sub_Title2, new { @class = "form-control" })
     <br />
     @Html.Label("GNO:")
-    @Html.TextBoxFor(x => x.GNO, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.GNO, new
+    {
+        @class = "form-control " + (ViewData.ModelState["GNO"]?.Errors.Any() == true ? "border-danger" : ""),
+        placeholder = ViewData.ModelState["GNO"]?.Errors.FirstOrDefault()?.ErrorMessage ?? "Enter GNO"
+    })
+    @Html.ValidationMessageFor(x => x.GNO, "", new { @class = "text-danger d-none" })
+
     <br />
     @Html.Label("Date:")
     @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
