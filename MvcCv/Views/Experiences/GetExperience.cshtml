@@ -23,7 +23,8 @@
     @Html.Label("Details")
     @Html.TextAreaFor(x => x.Details, new { @class = "form-control", oninput = "autoExpand(this)" })
     <br />
-    <button class="btn btn-info">Submit</button>
+    <button class="btn btn-info" onclick="return confirm('Are you sure?');">Submit</button>
+    <a href="@Url.Action("CancelEdit", "Experiences")" class="btn btn-danger" onclick="return confirm('Are you sure you want to discard the changes?');">Cancel</a>
 </form>
 
 

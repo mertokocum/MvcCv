@@ -60,13 +60,13 @@
                                                 @*<td style="vertical-align: middle;"><a href="#" class="btn" style="background-color:#e4e4e4;border:3px solid #ff0000">Delete</a></td>
                                                     <td style="vertical-align: middle;"><a href="#" class="btn" style="background-color:#e4e4e4;border:3px solid #0069d9">Edit</a></td>*@
                                                 <td>
-                                                    <a class="btn btn-danger btn-sm" href="/Skills/DeleteSkill/@item.ID">
+                                                    <a class="btn btn-danger btn-sm" href="/Skills/DeleteSkill/@item.ID" onclick="return confirm('Are you sure?');">
                                                         <i class="fas fa-trash"></i>
                                                         Delete
                                                     </a>
                                                 </td>
                                                 <td style="display: flex; align-items: center; justify-content: center;">
-                                                    <a class="btn btn-info btn-sm" href="#">
+                                                    <a class="btn btn-info btn-sm" href="/Skills/EditSkill/@item.ID">
                                                         <i class="fas fa-pencil-alt" style="margin-right: 5px;"></i>
                                                         Edit
                                                     </a>

@@ -51,6 +51,10 @@ namespace MvcCv.Controllers
             repo.TUpdate(t);
             return RedirectToAction("Index");
         }
+        public ActionResult CancelEdit()
+        {
+            return RedirectToAction("Index");
+        }
 
     }
 }
