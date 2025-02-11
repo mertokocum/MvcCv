@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DbCvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DbCvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TblAboutme">
           <Key>
             <PropertyRef Name="ID" />
@@ -16,7 +16,7 @@
           <Property Name="phone" Type="varchar" MaxLength="20" />
           <Property Name="mail_address" Type="varchar" MaxLength="50" />
           <Property Name="about_me" Type="varchar(max)" />
-          <Property Name="Photo" Type="varchar" MaxLength="200" />
+          <Property Name="Photo" Type="varchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="TblAdmin">
           <Key>
@@ -79,6 +79,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Skill" Type="varchar" MaxLength="100" />
+          <Property Name="Progress" Type="tinyint" />
         </EntityType>
         <EntityContainer Name="DbCvModelStoreContainer">
           <EntitySet Name="TblAboutme" EntityType="Self.TblAboutme" Schema="dbo" store:Type="Tables" />
@@ -90,8 +91,7 @@
           <EntitySet Name="TblSertificates" EntityType="Self.TblSertificates" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblSkills" EntityType="Self.TblSkills" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DbCvModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -106,7 +106,7 @@
           <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="mail_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="about_me" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Photo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Photo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TblAdmin">
           <Key>
@@ -169,6 +169,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Skill" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Progress" Type="Byte" />
         </EntityType>
         <EntityContainer Name="DbCvEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TblAboutme" EntityType="Self.TblAboutme" />
@@ -264,6 +265,7 @@
           <EntitySetMapping Name="TblSkills">
             <EntityTypeMapping TypeName="DbCvModel.TblSkills">
               <MappingFragment StoreEntitySet="TblSkills">
+                <ScalarProperty Name="Progress" ColumnName="Progress" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Skill" ColumnName="Skill" />
               </MappingFragment>

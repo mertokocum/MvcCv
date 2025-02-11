@@ -30,19 +30,36 @@
                                     <tbody>
                                         @foreach (var item in Model)
                                         {
-                                        <tr>
-                                            <td>@item.ID</td>
-                                            <td>@item.Skill</td>
-                                            <td>
-                                                <div class="progress progress-xs">
-                                                    <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                                </div>
-                                            </td>
-                                            <td><span class="badge bg-danger">55%</span></td>
-                                        </tr>
+                                            // Renk atama
+                                            string progressColor = "bg-danger"; // Varsayılan olarak kırmızı
+                                            if (item.Progress >= 0 && item.Progress <= 30)
+                                            {
+                                                progressColor = "bg-warning"; // Turuncu
+                                            }
+                                            else if (item.Progress > 30 && item.Progress <= 60)
+                                            {
+                                                progressColor = "bg-primary"; // Mavi
+                                            }
+                                            else if (item.Progress > 60 && item.Progress <= 100)
+                                            {
+                                                progressColor = "bg-success"; // Yeşil
+                                            }
+
+                                            <tr>
+                                                <td>@item.ID</td>
+                                                <td>@item.Skill</td>
+                                                <td style="display: flex; align-items: center; justify-content: center; height: 50px;">
+                                                    <div class="progress progress-xs" style="width: 80%;">
+                                                        <div class="progress-bar @progressColor" style="width: @item.Progress%"></div>
+                                                    </div>
+                                                </td>
+                                                <td><span class="badge @progressColor">@item.Progress%</span></td>
+                                            </tr>
                                         }
                                     </tbody>
                                 </table>
+
+
                             </div>
                         </div>
                     </div>
