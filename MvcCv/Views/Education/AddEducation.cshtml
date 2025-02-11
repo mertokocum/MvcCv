@@ -8,8 +8,18 @@
 <h4>Add New Education</h4>
 <br />
 <form method="post">
-    @Html.Label("University Name:")
+    @*@Html.Label("University Name:")
     @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Title, "", new { @class = "text-danger" })*@
+
+    @Html.Label("University Name:")
+    @Html.TextBoxFor(x => x.Title, new
+    {
+        @class = "form-control " + (ViewData.ModelState["Title"]?.Errors.Any() == true ? "border-danger" : ""),
+        placeholder = ViewData.ModelState["Title"]?.Errors.FirstOrDefault()?.ErrorMessage ?? ""
+    })
+    @Html.ValidationMessageFor(x => x.Title, "", new { @class = "text-danger d-none" })
+
     <br />
     @Html.Label("Department:")
     @Html.TextBoxFor(x => x.Sub_Title, new { @class = "form-control" })

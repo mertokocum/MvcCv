@@ -11,10 +11,12 @@ namespace MvcCv.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TblEducation
     {
         public int ID { get; set; }
+        [Required(ErrorMessage ="Please enter data!")]
         public string Title { get; set; }
         public string Sub_Title { get; set; }
         public string Sub_Title2 { get; set; }
