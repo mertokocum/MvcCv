@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "EditEducation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@model MvcCv.Models.Entity.TblEducation
+@{
+    ViewBag.Title = "AddEducation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Edit Education</h4>
+<br />
+<form method="post">
+    @*@Html.Label("University Name:")
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Title, "", new { @class = "text-danger" })*@
+
+    @Html.Label("University Name:")
+    @Html.TextBoxFor(x => x.Title, new
+    {
+        @class = "form-control " + (ViewData.ModelState["Title"]?.Errors.Any() == true ? "border-danger" : ""),
+        placeholder = ViewData.ModelState["Title"]?.Errors.FirstOrDefault()?.ErrorMessage ?? ""
+    })
+    @Html.ValidationMessageFor(x => x.Title, "", new { @class = "text-danger d-none" })
+
+    <br />
+    @Html.Label("Department:")
+    @Html.TextBoxFor(x => x.Sub_Title, new { @class = "form-control" })
+    <br />
+    @Html.Label("Location:")
+    @Html.TextBoxFor(x => x.Sub_Title2, new { @class = "form-control" })
+    <br />
+    @Html.Label("GNO:")
+    @Html.TextBoxFor(x => x.GNO, new
+    {
+        @class = "form-control " + (ViewData.ModelState["GNO"]?.Errors.Any() == true ? "border-danger" : ""),
+        placeholder = ViewData.ModelState["GNO"]?.Errors.FirstOrDefault()?.ErrorMessage ?? "Enter GNO"
+    })
+    @Html.ValidationMessageFor(x => x.GNO, "", new { @class = "text-danger d-none" })
+
+    <br />
+    @Html.Label("Date:")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info" onclick="return confirm('Are you sure?');">Submit</button>
+</form>
+
+
+<script>
+    function autoExpand(element) { //textarea'yı içeriğe göre genişleten fonksiyon
+        element.style.height = "auto";
+        element.style.height = element.scrollHeight + "px";
+    }</script>
+
+
+
