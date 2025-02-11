@@ -132,6 +132,7 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ExperiencesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SkillsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2359,6 +2360,7 @@
     <Content Include="Views\Experiences\Index.cshtml" />
     <Content Include="Views\Experiences\AddExperience.cshtml" />
     <Content Include="Views\Experiences\GetExperience.cshtml" />
+    <Content Include="Views\Skills\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
