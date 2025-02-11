@@ -15,9 +15,10 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Skills</h3>
+                                <h2 class="card-title">Skills</h2>
                             </div>
                             <div class="card-body">
+                                <a href="#" class="btn btn-info" style="margin-bottom:20px">Add Skill</a>
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
@@ -25,8 +26,8 @@
                                             <th style="vertical-align: middle;">Task</th>
                                             <th style="vertical-align: middle;">Progress</th>
                                             <th style="width: 40px; vertical-align: middle;">Label</th>
-                                            <th style="width: 50px; vertical-align: middle;">Delete</th>
-                                            <th style="width: 50px; vertical-align: middle;">Edit</th>
+                                            <th style="width:5%; vertical-align: middle;">Delete</th>
+                                            <th style="width:5%; vertical-align: middle;">Edit</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -56,8 +57,21 @@
                                                     </div>
                                                 </td>
                                                 <td style="vertical-align: middle;"><span class="badge @progressColor">@item.Progress%</span></td>
-                                                <td style="vertical-align: middle;"><a href="#" class="btn" style="background-color:#e4e4e4;border:3px solid #ff0000">Delete</a></td>
-                                                <td style="vertical-align: middle;"><a href="#" class="btn" style="background-color:#e4e4e4;border:3px solid #0069d9">Edit</a></td>
+                                                @*<td style="vertical-align: middle;"><a href="#" class="btn" style="background-color:#e4e4e4;border:3px solid #ff0000">Delete</a></td>
+        <td style="vertical-align: middle;"><a href="#" class="btn" style="background-color:#e4e4e4;border:3px solid #0069d9">Edit</a></td>*@
+                                                <td>
+                                                    <a class="btn btn-danger btn-sm" href="#">
+                                                        <i class="fas fa-trash"></i>
+                                                        Delete
+                                                    </a>
+                                                </td>
+                                                <td style="display: flex; align-items: center; justify-content: center;">
+                                                    <a class="btn btn-info btn-sm" href="#">
+                                                        <i class="fas fa-pencil-alt" style="margin-right: 5px;"></i>
+                                                        Edit
+                                                    </a>
+                                                </td>
+
                                             </tr>
                                         }
                                     </tbody>
