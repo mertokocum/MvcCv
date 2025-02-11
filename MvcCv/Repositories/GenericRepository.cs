@@ -34,7 +34,7 @@ namespace MvcCv.Repositories
         {
             db.SaveChanges();
         }
-        public T find(Expression <Func<T,bool>> where)
+        public T Find(Expression <Func<T,bool>> where)
         {
             return db.Set<T>().FirstOrDefault(where);
         }

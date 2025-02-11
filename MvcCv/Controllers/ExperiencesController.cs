@@ -30,20 +30,20 @@ namespace MvcCv.Controllers
         }
         public ActionResult DeleteExperience(int id)
         {
-            TblExperiences t = repo.find(x=>x.ID==id);
+            TblExperiences t = repo.Find(x=>x.ID==id);
             repo.TDelete(t);
             return RedirectToAction("Index");
         }
         [HttpGet]
         public ActionResult GetExperience(int id)
         {
-            TblExperiences t = repo.find(x => x.ID == id);
+            TblExperiences t = repo.Find(x => x.ID == id);
             return View(t);
         }
         [HttpPost]
         public ActionResult GetExperience(TblExperiences p)
         {
-            TblExperiences t = repo.find(x => x.ID == p.ID);
+            TblExperiences t = repo.Find(x => x.ID == p.ID);
             t.Title = p.Title;
             t.Sub_Title = p.Sub_Title;
             t.Date = p.Date;

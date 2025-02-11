@@ -14,7 +14,7 @@ namespace MvcCv.Controllers
         GenericRepository<TblSkills> repo = new GenericRepository<TblSkills>();
         public ActionResult Index()
         {
-            var skills=repo.List();
+            var skills = repo.List();
             return View(skills);
         }
         [HttpGet]
@@ -26,6 +26,12 @@ namespace MvcCv.Controllers
         public ActionResult AddSkill(TblSkills p)
         {
             repo.TAdd(p);
+            return RedirectToAction("Index");
+        }
+        public ActionResult DeleteSkill(int id)
+        {
+            var skill = repo.Find(x => x.ID == id);
+            repo.TDelete(skill);
             return RedirectToAction("Index");
         }
     }

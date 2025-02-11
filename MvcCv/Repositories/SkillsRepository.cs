@@ -8,5 +8,6 @@ namespace MvcCv.Repositories
 {
     public class SkillsRepository : GenericRepository<TblSkills>
     {
+
     }
 }
