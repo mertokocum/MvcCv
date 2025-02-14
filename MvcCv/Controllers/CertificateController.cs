@@ -32,6 +32,17 @@ namespace MvcCv.Controllers
             repo.TUpdate(certificate);
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult AddCertificate()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddCertificate(TblSertificates p)
+        {
+            repo.TAdd(p);
+            return RedirectToAction("Index");
+        }
         public ActionResult CancelEdit()
         {
             return RedirectToAction("Index");
