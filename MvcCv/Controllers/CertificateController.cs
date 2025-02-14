@@ -43,6 +43,13 @@ namespace MvcCv.Controllers
             repo.TAdd(p);
             return RedirectToAction("Index");
         }
+        
+        public ActionResult DeleteCertificate(int id)
+        {
+            var certificate = repo.Find(x => x.ID == id);
+            repo.TDelete(certificate);
+            return RedirectToAction("Index");
+        }
         public ActionResult CancelEdit()
         {
             return RedirectToAction("Index");
