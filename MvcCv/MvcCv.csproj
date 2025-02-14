@@ -2369,6 +2369,7 @@
     <Content Include="Views\Education\AddEducation.cshtml" />
     <Content Include="Views\Education\EditEducation.cshtml" />
     <Content Include="Views\Certificate\Index.cshtml" />
+    <Content Include="Views\Certificate\GetCertificate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

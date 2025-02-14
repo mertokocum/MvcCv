@@ -17,5 +17,24 @@ namespace MvcCv.Controllers
             var certificate = repo.List();
             return View(certificate);
         }
+        [HttpGet]
+        public ActionResult GetCertificate(int id)
+        {
+            var certificate = repo.Find(x => x.ID == id);
+            return View(certificate);
+        }
+        [HttpPost]
+        public ActionResult GetCertificate(TblSertificates t)
+        {
+            var certificate = repo.Find(x => x.ID == t.ID);
+            certificate.Detail = t.Detail;
+            certificate.Date = t.Date;
+            repo.TUpdate(certificate);
+            return RedirectToAction("Index");
+        }
+        public ActionResult CancelEdit()
+        {
+            return RedirectToAction("Index");
+        }
     }
 }
