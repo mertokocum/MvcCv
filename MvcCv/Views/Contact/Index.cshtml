@@ -1,0 +1,57 @@
+﻿@using MvcCv.Models.Entity
+@model List<TblMessage>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <a href="/Certificate/AddCertificate" class="btn btn-primary" style="margin-top:1em">Add Certificate</a>
+                <div class="col-md-12" style="margin-top:1em">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="tab-pane" id="timeline">
+                                <div class="timeline timeline-inverse">
+                                    @{
+                                        int index = 1;
+                                    }
+                                    @foreach (var item in Model)
+                                    {
+                                        var bgColor = (index % 2 == 1) ? "bg-gradient-gray" : "bg-gradient-gray-dark";
+
+                                        <div class="time-label">
+                                            <span class="@bgColor">
+                                                @(((DateTime)item.Date).ToString("dd-MMM-yyyy"))
+                                            </span>
+                                        </div>
+                                        <div>
+                                            @*<i class="fas fa-envelope bg-primary"></i>*@
+                                            <div class="timeline-item">
+                                                <span class="time" style="font-size:15px">@item.Mail</span>
+                                                <div class="timeline-header" style="color:#0082ff; font-weight:600 !important">Name: @item.NameSurname</div>
+                                                <div class="timeline-header">Subject: @item.Subject</div>
+                                                <div class="timeline-body">Message: @item.Message</div>
+
+                                            </div>
+                                        </div>
+
+                                        index++;
+                                    }
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
