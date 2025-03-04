@@ -135,6 +135,7 @@
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\ExperiencesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InterestController.cs" />
     <Compile Include="Controllers\SkillsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2373,6 +2374,9 @@
     <Content Include="Views\Certificate\GetCertificate.cshtml" />
     <Content Include="Views\Certificate\AddCertificate.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Interest\Index.cshtml" />
+    <Content Include="Views\Interest\AddInterest.cshtml" />
+    <Content Include="Views\Interest\EditInterest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

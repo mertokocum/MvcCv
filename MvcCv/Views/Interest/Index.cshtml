@@ -1,0 +1,51 @@
+﻿@using MvcCv.Models.Entity;
+@model List<TblHobbies>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<br />
+<h3>Interests List</h3>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>University</th>
+        <th>Department</th>
+       
+        <th>Delete</th>
+        <th>Edit</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Detail1</td>
+            <td>@item.Detail2</td>
+            
+            <td>
+                <a class="btn btn-danger btn-sm" href="/Interest/DeleteInterest/@item.ID" onclick="return confirm('Are you sure?');">
+                    <i class="fas fa-trash"></i>
+                    Delete
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-info btn-sm" href="/Interest/EditInterest/@item.ID">
+                    <i class="fas fa-pencil-alt" style="margin-right: 5px;"></i>
+                    Edit
+                </a>
+            </td>
+
+
+        </tr>
+    }
+</table>
+<a href="/Interest/AddInterest/" class="btn btn-primary">Add New Interest</a>
+
+
+
